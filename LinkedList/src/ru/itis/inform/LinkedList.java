@@ -3,8 +3,8 @@ package ru.itis.inform;
 /**
  * Created by Nurami on 14.02.2016.
  */
-public class LinkedList implements List{
-    private Node first;
+public class LinkedList<T> implements List<T> {
+    private Node<T> first;
 
     private int count;
 
@@ -13,32 +13,35 @@ public class LinkedList implements List{
         this.count = 0;
     }
 
-    public void add(int element) {
-        Node newNode = new Node(element);
+    public void add(T element) {
+        Node newNode = new Node<T>(element);
+        newNode.setPrevious(null);
         if (first == null) {
             this.first = newNode;
-            count++;
         } else {
             newNode.setNext(this.first);
+            first.setPrevious(newNode);
             first = newNode;
-            count++;
         }
+        this.count++;
     }
 
-    public void remove(int element) {
+    public void remove(T element) {
         Node node = first;
-        for (int i=0; i<count-1; i++) {
-            if ((i==0) && (node.getValue()==element)){
-                first=node.getNext();
-                count--;
-            }
-            else {
+        for (int i = 0; i < count - 1; i++) {
+            if ((i == 0) && (node.getValue() == element)) {
+                first = node.getNext();
+            } else {
                 if (node.getNext().getValue() == element) {
                     node.setNext(node.getNext().getNext());
-                    count--;
                 }
                 node = node.getNext();
             }
+            count--;
         }
+    }
+
+    public Iterator<T> iterator() {
+        return new LinkedListIteratorImpl<T>(this.first);
     }
 }

@@ -3,11 +3,12 @@ package ru.itis.inform;
 /**
  * Created by Nurami on 14.02.2016.
  */
-public class Node {
-    private int value;
-    private Node next;
+public class Node <T> {
+    private T value;
+    private Node<T> next;
+    private Node<T> previous;
 
-    public Node(int value) {
+    public Node(T value) {
         this.value = value;
         this.next = null;
     }
@@ -16,12 +17,22 @@ public class Node {
         this.next  = next;
     }
 
-    public int getValue() {
+    public void setPrevious(Node previous) {
+        this.previous = previous;
+    }
+
+    public T getValue() {
         return value;
     }
 
-    public Node getNext() {
+    public Node<T> getNext() {
         return next;
     }
+
+    public Node<T> getPrevious() {
+        return previous;
+    }
+
+
 }
 
