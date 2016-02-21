@@ -1,15 +1,14 @@
 package ru.itis.inform;
 
-import ru.itis.inform.Graph;
 
 /**
  * Created by Nurami on 11.02.2016.
  */
-public class GraphMatrixImpl implements Graph {
+public class GraphMatrixImpl implements Graph, DirectedGraph {
 
         private static final int DEFAULT_SIZE = 50;
         private int matrix[][];
-        private int floidmatrix[][];
+        public int floidmatrix[][];
         private int verticesCount;
         private int maxSize;
 
@@ -46,7 +45,17 @@ public class GraphMatrixImpl implements Graph {
             } else throw new IllegalArgumentException();
         }
 
-        public void doFloid() {
+    public void addEdgeDirected(int vertexA, int vertexB, int weight) {
+        if (vertexA < verticesCount && vertexB < verticesCount) {
+            this.matrix[vertexA][vertexB] = weight;
+            this.floidmatrix[vertexA][vertexB] = weight;
+        } else throw new IllegalArgumentException();
+    }
+
+
+
+
+        public void runFloid() {
             for (int k = 0; k < verticesCount; k++) {
                 for (int i = 0; i < verticesCount; i++) {
                     for (int j = 0; j < verticesCount; j++) {
@@ -61,8 +70,6 @@ public class GraphMatrixImpl implements Graph {
                 }
             }
         }
-
-
 
         public void showGraph() {
             for (int i = 0; i < verticesCount; i++) {

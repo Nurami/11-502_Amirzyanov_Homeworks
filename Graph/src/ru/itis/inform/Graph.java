@@ -6,8 +6,6 @@ package ru.itis.inform;
 public interface Graph {
     void addVertex();
     void addEdge(int vertexA, int vertexB, int weight);
-    void showGraph();
-    void doFloid();
-    void showFloidmatrix();
+    void runFloid();
 }
 

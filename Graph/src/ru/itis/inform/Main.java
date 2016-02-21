@@ -3,7 +3,7 @@ package ru.itis.inform;
 public class Main {
 
     public static void main(String[] args) {
-            Graph graph = new GraphMatrixImpl();
+            GraphMatrixImpl graph = new GraphMatrixImpl(100);
 
             graph.addVertex();
             graph.addVertex();
@@ -17,7 +17,7 @@ public class Main {
             graph.addEdge(2, 1, 4);
             graph.addEdge(2, 4, 5);
 
-            graph.doFloid();
+            graph.runFloid();
 
             graph.showGraph();
             graph.showFloidmatrix();
