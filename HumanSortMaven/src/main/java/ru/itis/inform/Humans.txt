@@ -1,0 +1,3 @@
+bear 22
+fish 19
+tier 19
