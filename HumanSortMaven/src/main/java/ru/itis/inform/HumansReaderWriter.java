@@ -12,24 +12,32 @@ public class HumansReaderWriter {
 
     public LinkedList<Human> read() throws IOException {
         LinkedList<Human> exp = new LinkedList<Human>();
-        BufferedReader in = new BufferedReader(new FileReader("C:\\Users\\Nurami\\Documents\\IdeaProjects\\HumanSort\\src\\ru\\itis\\inform\\Humans.txt"));
+        BufferedReader in = new BufferedReader(new FileReader("C:\\Users\\Nurami\\Documents\\IdeaProjects\\HumanSortMaven\\src\\main\\java\\ru\\itis\\inform\\Humans.txt"));
         String line;
-        while ((line = in.readLine()) !=null) {
+        while ((line = in.readLine()) != null) {
             String[] a = line.split(" ");
             Human human = new Human(a[0], a[1]);
-            exp.add(human);
+            exp.addEnd(human);
         }
 
         in.close();
         return exp;
     }
 
-    public LinkedList<Human> write(LinkedList<Human> element) throws FileNotFoundException {
-        PrintWriter out = new PrintWriter(new File("C:\\Users\\Nurami\\Documents\\IdeaProjects\\HumanSort\\src\\ru\\itis\\inform\\HumansSort.txt"));
-        out.print(element);
-        out.close();
-        return null;
+    public void write(LinkedList<Human> qq) throws FileNotFoundException {
+
+        PrintWriter wr = new PrintWriter(new File("C:\\Users\\Nurami\\Documents\\IdeaProjects\\HumanSortMaven\\src\\main\\java\\ru\\itis\\inform\\HumansSort.txt"));
+
+        Iterator<Human> iterator = qq.iterator();
+
+        while (iterator.hasNext()) {
+            wr.println(iterator.pickNext().toString());
+            iterator.next();
+        }
+        wr.close();
+
     }
 }
+
 
 

@@ -1,3 +1,8 @@
-bear 22
 fish 19
 tier 19
+bear1 22
+bear2 22
+cash1 35
+cash2 35
+apple1 18
+apple2 18
