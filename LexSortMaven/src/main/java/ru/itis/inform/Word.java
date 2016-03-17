@@ -12,4 +12,7 @@ public class Word {
     public String getSlovo() {
         return slovo;
     }
+    public String toString(){
+        return slovo;
+    }
 }

@@ -12,13 +12,13 @@ public class WordsReaderWriter {
 
     public LinkedList<Word> read() throws IOException {
         LinkedList<Word> exp = new LinkedList<Word>();
-        BufferedReader in = new BufferedReader(new FileReader("C:\\Users\\Nurami\\Documents\\IdeaProjects\\HumanSort\\src\\ru\\itis\\inform\\Words.txt"));
+        BufferedReader in = new BufferedReader(new FileReader("C:\\Users\\Nurami\\Documents\\IdeaProjects\\LexSortMaven\\src\\main\\java\\ru\\itis\\inform\\Words.txt"));
         String line;
         while ((line = in.readLine()) !=null) {
             String[] a = line.split(" ");
             for (int i=0; i<a.length;  i++){
                 Word word = new Word(a[i]);
-                exp.add(word);
+                exp.addEnd(word);
             }
         }
 
@@ -26,11 +26,18 @@ public class WordsReaderWriter {
         return exp;
     }
 
-    public LinkedList<Word> write(LinkedList<Word> element) throws FileNotFoundException {
-        PrintWriter out = new PrintWriter(new File("C:\\Users\\Nurami\\Documents\\IdeaProjects\\HumanSort\\src\\ru\\itis\\inform\\WordsSorter.txt"));
-        out.print(element);
-        out.close();
-        return null;
+    public void write(LinkedList<Word> qq) throws FileNotFoundException {
+
+        PrintWriter wr = new PrintWriter(new File("C:\\Users\\Nurami\\Documents\\IdeaProjects\\LexSortMaven\\src\\main\\java\\ru\\itis\\inform\\SorterWords.txt"));
+
+        Iterator<Word> iterator = qq.iterator();
+
+        while (iterator.hasNext()) {
+            wr.println(iterator.pickNext().toString());
+            iterator.next();
+        }
+        wr.close();
+
     }
 }
 
