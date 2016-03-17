@@ -8,7 +8,7 @@ public interface Iterator <T> {
     boolean hasPrevious();
     T next();
     T previous();
-    T peekPrevious();
-    T peekNext();
+    T pickPrevious();
+    T pickNext();
     void insert (T element);
 }

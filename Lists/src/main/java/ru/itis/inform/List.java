@@ -8,5 +8,5 @@ public interface List <T> {
 
     void addEnd(T element);
 
-    void append(LinkedList element);
+    void append(LinkedList<T> element);
 }

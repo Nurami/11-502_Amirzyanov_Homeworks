@@ -49,11 +49,11 @@ class LinkedListIteratorImpl<T> implements Iterator<T> {
         }
     }
 
-    public T peekNext() {
+    public T pickNext() {
         return current.getValue();
     }
 
-    public T peekPrevious() {
+    public T pickPrevious() {
         return current.getPrevious().getValue();
     }
 }

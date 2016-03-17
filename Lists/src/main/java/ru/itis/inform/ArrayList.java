@@ -6,7 +6,7 @@ package ru.itis.inform;
  */
 public class ArrayList<T> {
 
-    private final int MAX_SIZE = 100;
+    private final int MAX_SIZE = 32;
 
     private Object elements[];
 
