@@ -63,31 +63,7 @@ public class Shell {
         while (mas[i]!=mas1[0]);
         return mas1;
 
-       /* do {
-            double minCos=1;
-            for (int i = 0; i < mas.length; i++) {
-                int a = getScalar(getVector(mas[k], mas[k-1]), getVector(mas[k], mas[i]));
-                double b = getProizLength(getVector(mas[k], mas[k-1]), getVector(mas[k], mas[i]));
-                if ((getCos2(a, b) < minCos) && (mas[i].isFlag()==false)) {
-                    minCos = getCos2(a, b);
-                    index=i;
-                }
-            }
-            Point c = mas[k+1];
-            mas[k+1]=mas[index];
-            mas[index]=c;
-            pi=mas[k+1];
-            mas[k+1].setFlag(true);
-            k++;
 
-        }
-        while (pi!=mas[0]);
-
-        Point[] mas1 = new Point[k];
-        for (int i=0; i<mas1.length; i++) {
-            mas1[i]=mas[i];
-        }
-        return mas1;*/
     }
 
 
